@@ -1,0 +1,57 @@
+
+/*for start button*/
+/*
+Attempt to reproduce the buttons of MoMA's Century of the Child website with pure CSS: http://goo.gl/abLVi
+If you don't find the buttons I'm talking about, try to click on "Related Events" on the footer menu.
+
+Rafael Rinaldi (rafaelrinaldi.com)
+Jan 19, 2013
+*/
+
+a#start {
+     background: transparent;
+    color: #F6EDD8;
+    font: 24px "Century Gothic";
+    padding: 10px 50px 10px 50px;
+    text-decoration: none;
+    border: #E7E6E6 solid 2px;
+    background-image: url("./pattern/grain.png");
+    background-color: #9B1711;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, .25);
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+a#start:hover {
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+#left-menu ul li span{
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+    background-color: rgb(253, 250, 215);
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
+}
+#left-menu ul li i {margin-right: 3px;}

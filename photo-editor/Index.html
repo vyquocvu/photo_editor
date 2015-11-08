@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PuPic Editor Mainpage</title>
+
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/button.css">
+	
+	<!-- Latest compiled and minified CSS -->
+<!-- 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	 -->
+	<link rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
+
+	<!-- jQuery library -->
+<!-- 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	 -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+<!-- 
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 -->
+	<script src="js/bootstrap-3.3.5.min.js"></script>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<style>
+	blockquote{
+		font-family: "Roboto Slab";
+		font-size: 16px;
+		border-left: none;
+	}
+	a#logo {
+		background-image: url("pic/pp_logo_tee_women_tight1.png");
+		position: absolute;
+		z-index: 1001;
+		top: 10px;
+	    margin-left: 20px;
+	    display: block;
+		background-repeat: no-repeat;
+		width: 180px;
+		height: 180px;
+		background-size: contain;
+		z-index: 2000;
+		color: transparent;
+	}
+	a#logo:hover {
+		width: 190px;
+		height: 190px;
+
+		-webkit-transition: all 0.3s ease;
+	    -moz-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	li.menu-item a:hover{
+		font-size: 34px;
+	}
+	</style>
+
+	<!-- 
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	 -->
+	<script src="js/jquery-1.9.1.min.js"></script 
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Link to jquery.slides.js -->
+  <script src="jquery.slides.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+      $('#under-slider-text').slidesjs({
+        width: 940,
+        height: 528,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>
+	<script>
+	  $(document).ready(function(){
+		$('a[href^="#"]').on('click',function (e) {
+		    e.preventDefault();
+
+		    var target = this.hash;
+		    var $target = $(target);
+
+		    $('html, body').stop().animate({
+		        'scrollTop': $target.offset().top
+		    }, 900, 'swing', function () {
+		        window.location.hash = target;
+		    });
+		});
+	});
+	</script>
+</head>
+<body>
+	<header class="main">
+		<div class="container" class="navbar" style="height:100%;">
+			<nav role="navigation" style="height:100%;">
+				<div>
+					<a  id="logo" href="">PuPic</a>
+				</div>
+				<ul id="row-center">
+					<li class="menu-item" style="width:20%; margin-left:20%;"><a href="#about-landing"> About me</a></li>	
+					<li class="menu-item" style="width:20%;"><a href="#feedback-landing"> Feedbacks</a></li>
+					<li class="menu-item" style="width:20%;"><a href="#mobile-landing"> Mobile app</a></li>	
+					<li class="menu-item" style="width:20%"><a href="#contact-landing"> Contact me</a></li>	
+				</ul>
+			</nav>
+			<hr class="bottom-dashed">
+		</div>
+	</header>
+	<main id="all-sections">
+		<span style="display:block;height:100px;"></span>
+		<section id="banner">
+			<div class="container smallpadding">
+				<div id="banner-name">
+					<h1>PUPIC PHOTO EDITOR</h1>
+				</div>
+				<div id="under-name-text">
+					<p>Free online photo retouch</p>
+				</div>
+			</div>
+			<div id="slider">
+				<div id="vertical-align-middle" class="container">
+					<div id="slides" style="width:1024px;height:381px;text-align: center;">
+						<img src="pic/picture-slider-1.jpg" alt="picture" id="slider-img">
+						<img src="pic/picture-slider-2.jpg" alt="picture" id="slider-img">
+						<img src="pic/picture-slider-3.jpg" alt="picture" id="slider-img">
+						<img src="pic/picture-slider-4.jpg" alt="picture" id="slider-img">
+					</div>
+
+				
+					<!-- <p>sometext</p> -->
+				</div>
+			</div>
+			<div class="container">
+				<div id="under-slider-text" style="height: 120px;">
+					<p>Crop, Rotate and Resize</p>
+					<p>Image Adjustments & Color Improving</p>
+					<p>Stickers, Frames & Text</p>
+					<p>Cool Filters & Effects</p>
+				</div>
+			</div>
+			<div class="container" style="text-align:center;">
+				<a id="start" href="Editor.html">Start now  ></a>
+			</div>
+			
+		</section>
+		<span class="anchor" id="about-landing"></span>
+		<section id="about-me" class="offset-before">
+			<div class="container">
+				<div class="section-title dark-title">
+					<h1>About Me</h1>
+					<span></span>
+					<h3 class="dark-text">What can I do</h3>
+				</div>
+				<div class="about-me-row">
+					<div class="about-me-title">CROP, ROTATE AND RESIZE</div>
+					<div class="section-content"><p>Basic operations like photo cropping and rotation are the ones that you need most often. Thus, we made them extremely	easy-to-use, intuitive and fast.</p>
+					
+					<p>Use the 'Rotate' tool to rotate a picture 90 degrees clockwise or counterclockwise, flip it vertically or horizontally or	straighten it. To crop an image, just click and drag a corner or a side of a crop frame, and you are done! There is a number of pre-set crop ratios and a free crop. When saving an edited photo you can choose its format (.jpg or .png), quality and size.</p></div>
+				</div>
+				<div class="about-me-row">
+					<div class="about-me-title">IMAGE ADJUSTMENTS & COLOR IMPROVING</div>
+					<div class="section-content">
+						<p>Modify image brightness and contrast, adjust shadows and highlights with the 'Exposure' tool. Enhance colors in your picture changing its hue, saturation and optimizing color temperature. Use the ‘Sharpness’ tool to control how sharp your image is</p>
+						<p>Image adjustment tools work smoothly with all changes being instantly applied to your photo.</p>
+					</div>
+				</div>
+				<div class="about-me-row">
+					<div class="about-me-title">STICKERS, FRAMES & TEXT</div>
+					<div class="section-content">
+						<p>Unleash your creativity: add funny stickers, stylish frames and custom text captions. There are 300+ various themed stickers, 30+ customizable frames and borders (you can make them thicker or thinner), and 20 fancy fonts for text captions.</p>
+						<p>Add more excitement and flair to your photos with these add-ons. You will get lots of fun during your experiments!</p>
+					</div>
+				</div>
+				<div class="about-me-row">
+					<div class="about-me-title">COOL FILTERS & EFFECTS</div>
+					<div class="section-content">
+						<p>Black and white, sepia, vignetting and pixelation - these awesome photo filters and effects are irreplaceable part of modern photo editing.</p>
+						<p>Be in trend and add a touch of vintage to your pictures, turn real-life scenes into miniatures with tilt-shift effect or apply selective focus effect that places one area of an image in sharp focus while blurring the rest</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<span class="anchor" id="feedback-landing"></span>
+		<section id="feedback">
+			<div class="container">
+				<div class="section-title dark-title">
+					<h1>FEEDBACKS</h1>
+					<span></span>
+					<h3 class="dark-text">What my users say</h3>
+				</div>
+				<div class="row">
+					<div class="col-md-4 section-content"><blockquote>
+						<p>"Airbrushes your pics to look flawless Amazing app. I love how it automatically corrects all the flaws and lighting,	then you can also do lots of other cool effects. I deleted all my old photo apps after getting this one :)"</p>
+						<footer>by Cameron Grossspan</footer>
+					</blockquote></div>
+				
+					<div class="col-md-4 section-content"><blockquote>
+						<p>"Love it! This works very well with imperfections. I was very pleased with the results. Thanks you."</p>
+						<footer>by C P</footer>
+					</blockquote></div>
+				
+					<div class="col-md-4 section-content" >
+						<blockquote>
+							<p>"Excellent app My favourite app, really cool, quick, and I use it all time. Now I can't share my photo without this. Because it makes my photos way much better"</p>
+							<footer>by Nadine Besic</footer>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+		<span class="anchor" id="mobile-landing"></span>
+		<section id="mobile-app" class="offset-before">
+			<div class="container">
+				<div class="section-title dark-title">
+					<h1>Mobile App</h1>
+					<span></span>
+					<h3 class="dark-text">IT'S CONVENIENT AND FREE</h3>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="./pic/mobile-app-pic.png" alt="">
+					</div>
+					<div class="col-md-6">
+						<div id="text-hover">
+						<p style="font-size: 30px; margin-bottom:0px;">Download PuPic Photo Editor</p>
+						<p style="font-size: 18px;">Take control of your photo editing experience.</p>
+						<ul class="social-btns">
+							<li id="app-store" style="display: inline-block;"><a href="#" data-lang="download_app_store">Download on App Store</a></li>
+							<li id="google-play" style="display: inline-block;"><a href="#" class="google-play" data-lang="download_google_play">GET IT ON Google play</a></li>
+						</ul>
+					</div>
+					</div></div>
+			</div>
+		</section>
+		<span class="anchor" id="contact-landing"></span>
+		<section id="contact-me" class="offset-before">
+			<div class="container">
+				<div class="section-title light-title">
+					<h1>Contact me</h1>
+					<span></span>
+					<h3 class="light-text">LOVE TO HEAR YOUR THOUGHTS</h3>
+				</div>
+				<form action="">
+				<fieldset>
+					<input type="text" placeholder="Name" id="name" name="name">
+					<input type="email" placeholder="Email address" id="email" name="email">
+					<input type="text" placeholder="Subject" id="subject" name="subject">
+					<textarea placeholder="Your message" rows="7" cols="60" id="message" name="message"></textarea>
+					<input type="submit" class="button" value="Send Message" id="send">
+				</fieldset>
+				</form>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

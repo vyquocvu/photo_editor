@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PuPic Editor</title>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/editor-style.css">
+	<link rel="stylesheet" href="style/style.css">
+<!--
+	<link rel="stylesheet" href="font/font-awesome.css">
+	 -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!-- jQuery library -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="script/frame.js"></script>
+	<script src="script/dragDrop.js"></script>
+	<script src="script/addText.js"></script>
+</head>
+<body>
+	<div id="header">
+		<span id="logo" style="padding-right:3px; padding-top: 3px; display:inline-block;position:absolute;">
+			<img src="pic/pp_logo_tee_women_tight1.png" style="width:120px; height:auto;"></img>
+		</span>
+		<hr class="bottom-horizontal-dashed">
+	</div>
+	<div id="menu" class="blue">
+		<hr class="top-horizontal-dashed">
+		<div id="left-menu">
+			<!--<ul>-->
+			<!--	<li><i class="fa fa-check"></i>Apply</li>-->
+			<!--	<li><i class="fa fa-times"></i>Cancel</li>-->
+			<!--	<li><i class="fa fa-refresh"></i>Original</li>-->
+			<!--	<li><i class="fa fa-columns"></i>Compare</li>-->
+			<!--</ul>-->
+		</div>
+		<div id="right-menu">
+			<ul>
+				<li><span id="open">Open</span><input type="file" id="imgFile" style="display:none">
+
+				</li>
+				<li><a id="save" style="text-decoration:none;color:#000" >Save</a></li>
+				<!--<li><span id="share">Share</span></li>-->
+			</ul>
+		</div>
+		<hr class="bottom-horizontal-dashed">
+	</div>
+	<!-- <aside class="blue"> -->
+	<div id="aside-basic" class="blue">
+		<hr class="top-horizontal-dashed">
+		<div id="devide-dashed" style="height:516px; border-right: 1px dashed rgba(255, 255, 255, 0.25);border-left: 1px dashed rgba(0, 0, 0, 0.25);top:4px;left:158px;position:absolute;"></div>
+		<ul>
+			<li>
+				<span class="tool-name">Edit</span>
+				<span class="button-icon" id="edit">
+					<p class="fa fa-scissors"></p>
+				</span>
+			</li>
+			<!--<li>-->
+			<!--	<span class="tool-name">Effects</span>-->
+			<!--	<span class="button-icon" id="effects">-->
+			<!--		<p class="fa fa-paint-brush"></p>-->
+			<!--	</span>-->
+			<!--</li>-->
+			<li>
+				<span class="tool-name">Stickers</span>
+				<span class="button-icon" id="stickers">
+					<p class="fa fa-star"></p>
+				</span>
+			</li>
+			<li>
+				<span class="tool-name">Text</span>
+				<span class="button-icon" id="text">
+					<p class="fa fa-font"></p>
+				</span>
+			</li>
+			<li>
+				<span class="tool-name">Frames</span>
+				<span class="button-icon" id="frames">
+					<p class="fa fa-picture-o"></p>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div id="aside-extend" class="blue">
+		<div id="devide-dashed" style="height:516px; border-right: 1px dashed rgba(255, 255, 255, 0.25);border-left: 1px dashed rgba(0, 0, 0, 0.25);top:4px;left:5px;position:absolute;"></div>
+		<hr class="top-horizontal-dashed">
+		<ul id="ul-edit">
+			<li>Colors
+				<i class="fa fa-chevron-down" id = "color"></i>
+				<div id="colorForm">
+				<form>
+					<table>
+						<tr>
+							<td>
+								<label>Red offset:</label>
+
+								<input type="text" id="numberRedOff" name="numberRedOff" value="0" oninput="this.form.red.value=this.value"   >
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="slider" name="red" type="range" min="0" max="255" value="0" oninput="this.form.numberRedOff.value=this.value"   />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Green offset:</label>
+
+								<input type="text" id="numberGreenOff" name="numberGreenOff" value="0" oninput="this.form.green.value=this.value"  >
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="slider" name="green" type="range" min="0" max="255" value="0" oninput="this.form.numberGreenOff.value=this.value" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Blue offset:</label>
+
+								<input type="text" id="numberBlueOff" name="numberBlueOff" value="0" oninput="this.form.blue.value=this.value"  >
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="slider" name="blue" type="range" min="0" max="255" value="0" oninput="this.form.numberBlueOff.value=this.value" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="btnCancelDialogColor" type="button" value="Cancel"  />
+								<input id="btnSaveColor" type="button" value="OK" >
+
+							</td>
+						</tr>
+					</table>
+					</form>
+				</div>
+			</li>
+			<li>
+				Crop
+				<i class="fa fa-chevron-down" id="crop"></i>
+				<div id="cropForm">
+				<form>
+					<input id="btnCancelFormCrop" type="button" value="Cancel"  />
+					<input id="btnApplyFormCrop" type="button" value="Apply" >
+				</form>
+				</div>
+			</li>
+			<!--<li id="liRotate">Rotate-->
+			<!--	<i class="fa fa-chevron-down"></i>-->
+			<!--	<div id="rotateForm">-->
+
+			<!--	</div>-->
+			<!--</li>-->
+			<!--<li>Basics-->
+			<!--	<i class="fa fa-chevron-down"></i></li>-->
+
+			<li>Resize
+				<i class="fa fa-chevron-down"></i>
+				<input id="resizebar" name="" type="range" min="0" max="100"  value="100" />
+				</li>
+		</ul>
+		<ul id="ul-effects">
+		</ul>
+		<ul id="ul-tickers">
+	      <li><img id="drag1" src="sticker/sticker1.png" draggable="true" ondragstart="drag(event)" width="100" height="80"></li>
+	      <li><img id="drag2" src="sticker/sticker2.png" draggable="true" ondragstart="drag(event)"  width="100" height="80"></li>
+	      <li><img id="drag3" src="sticker/sticker3.png" draggable="true" ondragstart="drag(event)" width="80" height="80"></li>
+	      <li><span id="overlay">Image</span><input type="file" id="overlay_file" style="display:none"></li>
+	      <li>
+	      	<input id="sizeImg" name="over_y" type="range" min="0" max="100"  />
+	      	<input id="over_y" name="over_y" type="range" min="0" max="500" value='10' />
+	        <input id="over_x" name="over_x" type="range" min="0" max="1000" value='10'/>
+	        <input type="button" id="overok" onclick="summit()" value='Insert'/>
+	      </li>
+		</ul>
+		<ul id="ul-text">
+			<li>Add text<i class="fa fa-chevron-down"></i></li></li>
+	      <li>
+	        <textarea rows="3" cols="15" id="inserttext" onChange='insertText()'> Fill your text</textarea>
+	      </li>
+	      <li>
+	        <input id="sliderText" name="text_positon_y" type="range" min="0" max="500"  />
+	        <input id="sliderText" name="text_positon_x" type="range" min="0" max="1000" />
+	        <input id="colortext" type="color" class="colorbar" onchange="insertText()" />
+	        <input type="button" id="oktext" onclick="summit()" value='Insert' height='20' style="padding-left:10"/>
+	      </li>
+	      <li></li>
+			<!--<li>Bubbles<i class="fa fa-chevron-down"></i></li>-->
+		</ul>
+		<ul id="ul-frames">
+			<li>Classic<i class="fa fa-chevron-down" id="frame"></i>
+			<div id="frameForm">
+				<ul><li>
+				<a href="#">
+					<img id="dragF1" src="img/01.png" draggable="true" ondragstart="drag(event)"   width="50" height="50">
+
+				</a>
+				</li>
+				<li>
+				<a href="#">
+					<img id="dragF2" src="img/05.png" draggable="true" ondragstart="drag(event)"  width="50" height="50">
+
+				</a>
+				</li>
+			</ul>
+			<input type="button" id="btnApplyFormFrame" value="Apply">
+			<input type="button" id="btnCancelFormFrame" value="Cancel">
+			</div>
+			</li>
+
+			<!-- <li>Textures<i class="fa fa-chevron-down"></i></li></li>
+			<li>Neon<i class="fa fa-chevron-down"></i></li></li>
+			<li>Crystal<i class="fa fa-chevron-down"></i></li></li> -->
+		</ul>
+		<div id="devide-dashed" style="height:516px; border-right: 1px dashed rgba(255, 255, 255, 0.25);border-left: 1px dashed rgba(0, 0, 0, 0.25);top:4px;left:156px;position:absolute;"></div>
+	</div>
+
+	<!-- </aside> -->
+	<div id="workplace">
+		<canvas id = "canvas" ondrop="drop(event)" ondragover="allowDrop(event)" width = "1025.230" height = "520">
+			<img src="" id="selectImg" />
+		</canvas>
+
+	</div>
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.Jcrop.min.js"></script>
+	<script src="script/menu.js"></script>
+	<script src="script/jquery-ui-1.11.4.js"></script>
+	<script src="script/cropImg.js"></script>
+	<script src="script/colorForm.js"></script>
+
+</body>
+</html>
